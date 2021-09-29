@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+LOGIN PAGE
+{% endblock %}
+
+{% block contents %}
+<div class="form_block_parent">
+  <div class="form_block">
+    <form action="/login/try" method="POST" class="pure-form pure-form-stacked">
+      <label id="user_id">ユーザーID</label>
+      <input type="text" name="user_id" id="user_id" placeholder="ユーザーID" />
+      <label id="password">パスワード</label>
+      <input type="text" name="password" id="password" placeholder="パスワード" />
+      <button type="submit" class="pure-button pure-button-primary">GO</button>
+    </form>
+  </div>
+  <div class="form_block">
+    <label id="new_user">↓新規登録の場合はココ</label>
+    <form action="login/new_user" method="POST" class="pure-form pure-form-stacked">
+      <button type="submit" class="pure-button pure-button-primary">新規登録</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
