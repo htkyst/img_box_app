@@ -29,8 +29,16 @@ def logout():
     return Message('ログアウトしました')
 
 @app.route('/login/new_user', methods=['POST'])
-def register_new_user():
+def regist_user():
+    return render_template('regist_user.html')
 
+@app.route('/login/new_user/try', methods=['POST'])
+def regist_try():
+    new_user_id, new_password = user.GetNewUserInfo(request.form)
+    if user.RegistNewUser(new_user_id, new_password):
+        return render_template('index.html', user_id=new_user_id)
+    else:
+        return Message('そのユーザIDは使用されています')
 
 def Message(mess, title="あなたに贈る言の葉"):
     return render_template('msg.html', msg=mess, title=title)

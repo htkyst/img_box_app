@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ユーザー登録
+{% endblock %}
+
+{% block contents %}
+<div class="new_user">
+  <form action="/login/new_user/try" method="POST" class="pure-form pure-form-stacked">
+    <label id="new_user_id">ユーザーID</label>
+    <input type="text" name="new_user_id" id="new_user_id" placeholder="ユーザーID" />
+    <label id="new_password">パスワード</label>
+    <input type="text" name="new_password" id="new_password" placeholder="パスワード" />
+    <button type="submit" class="pure-button pure-button-primary">登録</button>
+  </form>
+</div>
+{% endblock %}

@@ -24,6 +24,11 @@ def TryLogout():
 def GetUserID():
     return session['login'] if IsLogin() else 'No login user'
 
+def GetNewUserInfo(form):
+    user_id = form.get('new_user_id', '')
+    password = form.get('new_password', '')
+    return user_id, password
+
 def RegistNewUser(new_user_id, new_password):
     if new_user_id in USER_LIST:
         return False
